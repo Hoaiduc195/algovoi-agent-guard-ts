@@ -1,0 +1,35 @@
+{
+  "name": "algovoi-agent-guard",
+  "version": "0.1.0",
+  "description": "The budget your agent can't raise: human-signed spend mandates with offline-verifiable receipts (TypeScript port, byte-conformant with the frozen L1 vectors)",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test test/conformance.test.mjs test/interop.test.mjs test/guard.test.mjs",
+    "conformance": "npm run build && node --test test/conformance.test.mjs",
+    "interop": "npm run build && node --test test/interop.test.mjs",
+    "bench": "npm run build && node tools/bench.mjs"
+  },
+  "dependencies": {
+    "@noble/curves": "^1.6.0",
+    "@noble/hashes": "^1.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
