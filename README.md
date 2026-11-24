@@ -1,5 +1,7 @@
 # AlgoVoi Agent Guard (TypeScript)
 
+[![CI](https://github.com/chopmob-cloud/algovoi-agent-guard-ts/actions/workflows/ci.yml/badge.svg)](https://github.com/chopmob-cloud/algovoi-agent-guard-ts/actions/workflows/ci.yml)
+
 **The budget your agent can't raise.**
 
 A human signs a spend mandate. The agent holds its own key but never the human's.
